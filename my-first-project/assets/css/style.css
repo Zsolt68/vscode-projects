@@ -1,0 +1,14 @@
+
+/* body{
+    background-color: lightgreen;
+    background-image: url("../images/nature_1.jpg");
+} */
+
+body{
+    background-color: lightgreen;
+    background-image: url("assets/images/nature_1.jpg");
+}
+
+h2{
+    color:orangered
+}
