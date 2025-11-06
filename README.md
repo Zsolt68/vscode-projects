@@ -1,6 +1,6 @@
 ﻿ Coding Club
 
-## Description
+### Description
 The Coding Club website is a landing page for parents and children looking for a fun coding club for kids aged 8 to 18. The Coding club offers activities for kids to learn how to code from a young age.
 
 ## Features
@@ -15,4 +15,5 @@ The Coding Club website is a landing page for parents and children looking for a
 ## Credits
 - The code for the social media icon animations was taken from [website name](https://username2.github.io/projectname/)
 - Thanks to my mentor Rudy Matheson for his patience and support as I built out this project.
+
 
