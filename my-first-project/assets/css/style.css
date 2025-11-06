@@ -16,3 +16,7 @@ h2{
 p{
     font-weight:bold;
 }
+
+.text-center{
+    text-align: center;
+}
