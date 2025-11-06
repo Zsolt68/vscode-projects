@@ -8,6 +8,7 @@ The Coding Club website is a landing page for parents and children looking for a
 2. About us section
 3. Sign up form
 4. Contact section
+5. Footer
 
 ## How to View the Project
 - [View the deployed website](https://username.github.io/codingclub/)
@@ -22,6 +23,7 @@ The Coding Club website is a landing page for parents and children looking for a
 |----------------|---------------|------------------|
 | *Italic text*  | **bold text** | `inline code`    |
 | 42             | 400           | 97               |
+
 
 
 
