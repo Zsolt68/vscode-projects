@@ -14,24 +14,3 @@ const forecastURL = "https://api.openweathermap.org/data/2.5/forecast";
 // Search Button Event
 // ---------------------------------------------
 
-// Get a reference to the search button by its ID and add a click event listener
-document.getElementById("search-btn").addEventListener("click", () => {
-
-  // Read the value from the search input, trim whitespace from both ends, and store it in the 'city' variable
-  const city = document.getElementById("search-input").value.trim();
-
-  // Only proceed if the user actually typed something
-  if (city) {
-    // Call the function to fetch current weather for the given city
-    getWeather(city);
-    // Call the function to fetch data for the given city
-    getForecast(city);
-  }
-});
-
-// ---------------------------------------------
-// Fetch Current Weather
-// ---------------------------------------------
-function getWeather(city) {
-
-
