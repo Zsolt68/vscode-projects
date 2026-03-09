@@ -14,3 +14,8 @@ const forecastURL = "https://api.openweathermap.org/data/2.5/forecast";
 // Search Button Event
 // ---------------------------------------------
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6de0206851fafec187330b5225db9ce3d6e6de8f
