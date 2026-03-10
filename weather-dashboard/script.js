@@ -43,6 +43,21 @@ searchBtn.addEventListener("click", function (event) {
     console.log("Search button clicked");
 
     // TODO: Add search logic here
+    const city = cityInput.value.trim();
+
+    // 1. Validate input
+    if (city === "") {
+        searchMessage.textContent = "Please enter a city name.";
+        searchMessage.style.color = "red";
+        return;
+    }
+
+    // 2. Show loading message
+    searchMessage.textContent = "Loading weather data...";
+    searchMessage.style.color = "black";
+
+    // 3. Fetch current weather
+    getCurrentWeather(city);
 });
 
 
