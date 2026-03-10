@@ -62,13 +62,59 @@ searchBtn.addEventListener("click", function (event) {
 
 
 // ===============================
-// MAIN FUNCTIONS (empty for now)
+// MAIN FUNCTIONS
 // ===============================
 
 // Fetch current weather
 function getCurrentWeather(city) {
     console.log("Fetching current weather for:", city);
-    // TODO: Add API call here
+    // API call here >
+    // Build the full API request URL by combining:
+// - the base current weather endpoint
+// - the city the user typed (q=city)
+// - my personal API key from above (appid=apiKey)
+// - units=metric to get Celsius instead of Fahrenheit
+
+ const url = `${currentWeatherURL}?q=${city}&appid=${apiKey}&units=metric`;
+
+// Send a request to the OpenWeather API using the URL above
+    fetch(url)
+    // Handle the response from the OpenWeather server
+        .then(response => {
+            // response.ok is true when the server returns a successful status (200–299).
+// The !response.ok is true when the response failed.
+// Example: 404 Not Found → response.ok = false → !response.ok = true
+        // if response.ok will be false. We manually throw an error here.
+        // so the code jumps to the .catch() block below
+            if (!response.ok) {
+ 
+                throw new Error("City not found");
+            }
+            // If the response is OK, convert the raw response into JSON.
+            return response.json();
+        })
+        // This .then() receives the parsed JSON data from above
+        .then(data => {
+            console.log("Current weather data:", data);
+// Clear any previous message (loading, error, etc.)
+
+            searchMessage.textContent = "";
+// Pass the weather data to your UI function to display it on the page
+            displayCurrentWeather(data);
+            // Save the searched city to history (localStorage)
+            saveHistory(city);
+        })
+    // This .catch() runs if ANY error happens above:
+    // - network error
+    // - invalid city
+    // - JSON parsing error
+        .catch(error => {
+            console.error("Error fetching weather:", error);
+             // Show a user‑friendly error message on the page when something goes wrong
+            searchMessage.textContent = "City not found. Try again.";
+            searchMessage.style.color = "red";
+        });
+
 }
 
 // Fetch 5-day forecast
