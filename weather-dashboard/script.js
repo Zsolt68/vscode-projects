@@ -42,7 +42,7 @@ searchBtn.addEventListener("click", function (event) {
     event.preventDefault();
     console.log("Search button clicked");
 
-    // TODO: Add search logic here
+    // Search logic >
     const city = cityInput.value.trim();
 
     // 1. Validate input
@@ -123,10 +123,27 @@ function getForecast(city) {
     // TODO: Add API call here
 }
 
-// Render current weather to the UI
+// Render and displays the current weather data to the UI/web page
 function displayCurrentWeather(data) {
+    // Extract the values we need from the API response
+    // Extract the city name returned by the API
+    const cityName = data.name;
+    // Extract the current temperature in Celsius
+    const temperature = data.main.temp;
+    // Extract the weather description (e.g., "clear sky")
+    // The API returns "weather" as an array of objects.
+// We take the first object [0] and read its "description" field,
+// which contains a human-readable text like "clear sky" or "light rain"
+    const description = data.weather[0].description;
+    // Extract the weather icon code (e.g., "01d")
+    const icon = data.weather[0].icon;
+    const humidity = data.main.humidity;
+    const windSpeed = data.wind.speed;
+    const pressure = data.main.pressure;
+    const feelsLike = data.main.feels_like;
     console.log("Displaying current weather:", data);
     // TODO: Update DOM elements
+
 }
 
 // Render forecast cards
