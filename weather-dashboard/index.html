@@ -93,11 +93,51 @@
               <!-- CITY NAME (JS updates: city-name) -->
               <h3 id="city-name"></h3>
 
-              <!-- DATE -->
+              <!-- DATE (updated by JS: current date string)-->
               <p id="current-date"></p>
 
               <!-- MAIN WEATHER ROW (ICON + TEMP + DESCRIPTION) -->
-   
+   <div class="d-flex align-items-center" style="background-color:#ffffff; padding:10px; margin-bottom:10px;">
+    <!-- WEATHER ICON (updated by JS: icon URL) -->
+  <img 
+    id="weather-icon" 
+    style="width:60px; height:60px; margin-right:10px;"
+  >
+  <!-- Temperature + description container -->
+  <div>
+    <!-- TEMPERATURE (updated by JS: Math.round(temp) + °C) -->
+    <p 
+      id="temperature" 
+      style="font-size:1.8rem; font-weight:bold;"
+    ></p>
+<!-- DESCRIPTION (updated by JS: clear sky, light rain, etc.) -->
+    <p id="description"></p>
+  </div>
+</div>
+<!-- WEATHER DETAILS GRID (feels-like, humidity, wind, pressure) -->
+<div 
+  class="row" 
+  style="background-color:#f0f0f0; padding:10px;"
+>
+  <!-- FEELS LIKE (updated by JS: feels_like) -->
+  <div class="col">
+    Feels like: <span id="feels-like"></span>
+  </div>
+
+  <!-- HUMIDITY (updated by JS: humidity%) -->
+  <div class="col">
+    Humidity: <span id="humidity"></span>
+  </div>
+
+  <!-- WIND (updated by JS: converted km/h) -->
+  <div class="col">
+    Wind: <span id="wind"></span>
+  </div>
+
+  <!-- PRESSURE (updated by JS: hPa) -->
+  <div class="col">
+    Pressure: <span id="pressure"></span>
+  </div>
             </div>
           </div>
  <!-- EMPTY STATE MESSAGE -->

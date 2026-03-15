@@ -25,13 +25,13 @@ const forecastCards = document.getElementById("forecast-cards");
 // EVENT LISTENERS
 // ===============================
 
-// Search button click
-searchBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  console.log("Search button clicked");
+// Handle search form submission
+document.getElementById("search-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // stop page reload
 
   // Search logic >
   const city = cityInput.value.trim();
+  console.log("City entered:", city);
 
   // 1. Validate input
   if (city === "") {
@@ -146,18 +146,18 @@ function displayCurrentWeather(data) {
 
   // Update the "feels like" temperature (rounded) in the UI
   document.getElementById("feels-like").textContent =
-    `Feels like: ${Math.round(feelsLike)}°C`;
+    `${Math.round(feelsLike)}°C`;
 
   // Update the humidity in the UI
-  document.getElementById("humidity").textContent = `Humidity: ${humidity}%`;
+  document.getElementById("humidity").textContent = `${humidity}%`;
 
   // Update the wind speed in the UI
   // Convert wind speed from m/s to km/h and round it
   document.getElementById("wind").textContent =
-    `Wind: ${Math.round(windSpeed * 3.6)} km/h`;
+    `${Math.round(windSpeed * 3.6)} km/h`;
 
   // Update the pressure in the UI
-  document.getElementById("pressure").textContent = `Pressure: ${pressure} hPa`;
+  document.getElementById("pressure").textContent = `${pressure} hPa`;
 
   // Build the full icon URL using the icon code from the API
   const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`;
