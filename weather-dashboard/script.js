@@ -115,7 +115,7 @@ function displayCurrentWeather(data) {
   // Extract the city name returned by the API
   const cityName = data.name;
   // Extract the current temperature in Celsius
-  const temperature = data.main.temp;
+  const temperature = data.main.feels_like;
   // Extract the weather description (e.g., "clear sky")
   // The API returns "weather" as an array of objects. > 0 ={id: 800, main: 'Clear', description: 'clear sky', icon: '01d'}
   // description = clear sky'icon ='01d' id =800 main ='Clear'
