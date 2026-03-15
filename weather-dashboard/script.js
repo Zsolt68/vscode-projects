@@ -148,21 +148,24 @@ function displayCurrentWeather(data) {
   // Update the city name in the UI
   document.getElementById("city-name").textContent = cityName;
 
-  // Update the temperature in the UI
-  document.getElementById("temperature").textContent = `${temperature}°C`;
+  // Update the temperature in the UI (rounded)
+  document.getElementById("temperature").textContent =
+    `${Math.round(temperature)}°C`;
 
   // Update the weather description in the UI
   document.getElementById("description").textContent = description;
 
-  // Update the "feels like" temperature in the UI
+  // Update the "feels like" temperature (rounded) in the UI
   document.getElementById("feels-like").textContent =
-    `Feels like: ${feelsLike}°C`;
+    `Feels like: ${Math.round(feelsLike)}°C`;
 
   // Update the humidity in the UI
   document.getElementById("humidity").textContent = `Humidity: ${humidity}%`;
 
   // Update the wind speed in the UI
-  document.getElementById("wind").textContent = `Wind: ${windSpeed} m/s`;
+  // Convert wind speed from m/s to km/h and round it
+  document.getElementById("wind").textContent =
+    `Wind: ${Math.round(windSpeed * 3.6)} km/h`;
 
   // Update the pressure in the UI
   document.getElementById("pressure").textContent = `Pressure: ${pressure} hPa`;
