@@ -80,16 +80,17 @@
         <!-- RIGHT COLUMN -->
       <div class="col-12 col-md-8" style="background-color:#f0e5ff; padding:15px;">
         
-        <!-- CURRENT WEATHER SECTION -->
-        <section id="current-weather" style="background-color:#e0f7fa; padding:15px; margin-bottom:20px;">
+        <!-- CURRENT WEATHER SECTION (hidden until a search happens) -->
+        <section id="current-weather" style="background-color:#e0f7fa; padding:15px; margin-bottom:20px; display:none;">
+           <!-- Section title -->
           <h2>Current Weather</h2>
 
-      <!-- CURRENT WEATHER CARD -->
+      <!-- CURRENT WEATHER CARD/Weather card container -->
           <div id="current-weather-card" class="card" style="background-color:#dbab5e; padding:15px;">
             <div class="card-body" style="background-color:#f19966f5; padding:15px;">
 
-              <!-- CITY NAME -->
-              <h3 id="current-city">City Name</h3>
+              <!-- CITY NAME (JS updates: city-name) -->
+              <h3 id="city-name">City Name</h3>
 
               <!-- DATE -->
               <p id="current-date">Date</p>
@@ -100,14 +101,19 @@
                 class="d-flex" 
                 style="background-color:#ffffff; padding:10px; margin-bottom:10px;"
               >
+              <!-- WEATHER ICON (JS updates: weather-icon) -->
                 <img 
-                  id="current-icon" 
+                  id="weather-icon" 
                   style="background-color:#eeeeee; width:60px; height:60px;"
                 >
-
+                <!-- Temperature + description -->
                 <div style="background-color:#f9f9f9; padding:10px;">
-                  <p id="current-temp">12°C</p>
-                  <p id="current-description">Sunny</p>
+
+                <!-- TEMPERATURE (JS updates: temperature) -->
+                  <p id="temperature">12°C</p>
+
+                <!-- DESCRIPTION (JS updates: description) -->
+                  <p id="description">Sunny</p>
                 </div>
               </div>   
               
@@ -117,10 +123,17 @@
                 class="row" 
                 style="background-color:#f0f0f0; padding:10px;"
               >
-                <div class="col">Feels like: <span id="current-feels-like">12°C</span></div>
-                <div class="col">Humidity: <span id="current-humidity">82%</span></div>
-                <div class="col">Wind: <span id="current-wind">5 m/s</span></div>
-                <div class="col">Pressure: <span id="current-pressure">1012 hPa</span></div>
+               <!-- FEELS LIKE (JS updates: feels-like) -->
+                <div class="col">Feels like: <span id="feels-like">12°C</span></div>
+
+                 <!-- HUMIDITY (JS updates: humidity) -->
+                <div class="col">Humidity: <span id="humidity">82%</span></div>
+
+                  <!-- WIND (JS updates: wind) -->
+                <div class="col">Wind: <span id="wind">5 m/s</span></div>
+
+                  <!-- PRESSURE (JS updates: pressure) -->
+                <div class="col">Pressure: <span id="pressure">1012 hPa</span></div>
               </div>
 
             </div>
