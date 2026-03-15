@@ -15,17 +15,6 @@ const forecastURL = "https://api.openweathermap.org/data/2.5/forecast";
 const cityInput = document.getElementById("city-input");
 const searchBtn = document.getElementById("search-btn");
 const searchMessage = document.getElementById("search-message");
-
-const currentCity = document.getElementById("current-city");
-const currentDate = document.getElementById("current-date");
-const currentTemp = document.getElementById("current-temp");
-const currentDescription = document.getElementById("current-description");
-const currentIcon = document.getElementById("current-icon");
-const currentFeelsLike = document.getElementById("current-feels-like");
-const currentHumidity = document.getElementById("current-humidity");
-const currentWind = document.getElementById("current-wind");
-const currentPressure = document.getElementById("current-pressure");
-
 const currentEmpty = document.getElementById("current-empty");
 const forecastEmpty = document.getElementById("forecast-empty");
 
