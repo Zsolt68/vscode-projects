@@ -44,7 +44,7 @@
 
   <!-- Search form -->
 
-  <form id="search-form" style="background-color:#d0f0f0; padding:10px;">
+  <form id="search-form" name="search-form" style="background-color:#d0f0f0; padding:10px;">
             <input 
               id="city-input" 
               style="background-color:#ffffff; width:100%; margin-bottom:10px;"
@@ -52,6 +52,7 @@
             >
             <button 
               id="search-btn" 
+              type="submit" 
               style="background-color:#cce0ff; padding:5px 10px;"
             >
               Search
@@ -96,46 +97,7 @@
               <p id="current-date"></p>
 
               <!-- MAIN WEATHER ROW (ICON + TEMP + DESCRIPTION) -->
-   <div 
-                id="current-main" 
-                class="d-flex" 
-                style="background-color:#ffffff; padding:10px; margin-bottom:10px;"
-              >
-              <!-- WEATHER ICON (JS updates: weather-icon) -->
-                <img 
-                  id="weather-icon" 
-                  style="background-color:#eeeeee; width:60px; height:60px;"
-                >
-                <!-- Temperature + description -->
-                <div style="background-color:#f9f9f9; padding:10px;">
-
-                <!-- TEMPERATURE (JS updates: temperature) -->
-                  <p id="temperature"></p>
-
-                <!-- DESCRIPTION (JS updates: description) -->
-                  <p id="description"></p>
-                </div>
-              </div>   
-              
-               <!-- WEATHER DETAILS GRID -->
-              <div 
-                id="current-details" 
-                class="row" 
-                style="background-color:#f0f0f0; padding:10px;"
-              >
-               <!-- FEELS LIKE (JS updates: feels-like) -->
-                <div class="col"> <span id="feels-like"></span></div>
-
-                 <!-- HUMIDITY (JS updates: humidity) -->
-                <div class="col"><span id="humidity"></span></div>
-
-                  <!-- WIND (JS updates: wind) -->
-                <div class="col"><span id="wind"></span></div>
-
-                  <!-- PRESSURE (JS updates: pressure) -->
-                <div class="col"><span id="pressure"></span></div>
-              </div>
-
+   
             </div>
           </div>
  <!-- EMPTY STATE MESSAGE -->
