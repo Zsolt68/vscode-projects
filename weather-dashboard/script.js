@@ -176,9 +176,33 @@ function displayForecast(data) {
 }
 
 // Save search history
+// STEP 1 — Try to load previously saved search history from localStorage
+// localStorage.getItem("history") tries to read a value saved under the key "history".
+// If it exists → it returns a STRING (e.g., '["Dublin","London"]').
+// If it does NOT exist → it returns null.
+let saved = localStorage.getItem("history");
+
+// We declare searchHistory here so we can assign to it inside the if/else below
+let searchHistory;
+// If 'saved' is NOT null, it means we found something in localStorage.
+if (saved) {
+  // JSON.parse() converts the saved STRING back into a real JavaScript Array.
+  // Example: '["Dublin","London"]' → ["Dublin", "London"]
+  searchHistory = JSON.parse(saved);
+  // If 'saved' is null, it means this is the first time the user is using the app.
+} else {
+  // Start with an empty array so the rest of the app has something to work with.
+  searchHistory = [];
+}
+// This helps you confirm in the console that the history loaded correctly.
+console.log("Loaded history:", searchHistory);
+
+
 function saveHistory(city) {
   console.log("Saving history:", city);
-  // TODO: Save to localStorage
+
+  
+
 }
 
 // Load search history on page load
