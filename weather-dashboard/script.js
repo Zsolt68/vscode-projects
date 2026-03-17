@@ -26,27 +26,29 @@ const forecastCards = document.getElementById("forecast-cards");
 // ===============================
 
 // Handle search form submission
-document.getElementById("search-form").addEventListener("submit", function (event) {
-  event.preventDefault(); // stop page reload
+document
+  .getElementById("search-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // stop page reload
 
-  // Search logic >
-  const city = cityInput.value.trim();
-  console.log("City entered:", city);
+    // Search logic >
+    const city = cityInput.value.trim();
+    console.log("City entered:", city);
 
-  // 1. Validate input
-  if (city === "") {
-    searchMessage.textContent = "Please enter a city name.";
-    searchMessage.style.color = "red";
-    return;
-  }
+    // 1. Validate input
+    if (city === "") {
+      searchMessage.textContent = "Please enter a city name.";
+      searchMessage.style.color = "red";
+      return;
+    }
 
-  // 2. Show loading message
-  searchMessage.textContent = "Loading weather data...";
-  searchMessage.style.color = "black";
+    // 2. Show loading message
+    searchMessage.textContent = "Loading weather data...";
+    searchMessage.style.color = "black";
 
-  // 3. Fetch current weather
-  getCurrentWeather(city);
-});
+    // 3. Fetch current weather
+    getCurrentWeather(city);
+  });
 
 // ===============================
 // MAIN FUNCTIONS
@@ -102,15 +104,46 @@ function getCurrentWeather(city) {
     });
 }
 
-// Fetch 5-day forecast
+// Fetch and show the 5-day forecast on the page for the selected city
 function getForecast(city) {
   console.log("Fetching forecast for:", city);
-  // TODO: Add API call here
+
+  // Build the API URL for the 5-day forecast
+  // forecastURL should be something like:
+  // "https://api.openweathermap.org/data/2.5/forecast"
+  // We add the city name, API key, and units (metric)
+  let url = forecastURL + "?q=" + city + "&appid=" + apiKey + "&units=metric";
+  
+  // Call the OpenWeather API using fetch()
+  fetch(url)
+    .then(function (response) {
+      // If the API returns an error (like city not found), response.ok will be false
+      if (!response.ok) {
+        throw new Error("Could not fetch forecast");
+      }
+
+      // Convert the API response into JSON format
+      return response.json();
+    })
+    .then(function (data) {
+      console.log("Forecast data received:", data);
+
+      // Send the forecast data to the function that displays it on the page
+      displayForecast(data);
+    })
+    .catch(function (error) {
+      // If something goes wrong, show a simple message o the page
+      console.log("Error fetching forecast:", error);
+
+      // Show an error message in the forecast container
+      forecastCards.innerHTML = "<p>Could not load forecast.</p>";
+    });
 }
 
 // Render and displays the current weather data to the UI/web page
 function displayCurrentWeather(data) {
   console.log("Displaying current weather:", data);
+
   // Extract the values we need from the API response
   // Extract the city name returned by the API
   const cityName = data.name;
@@ -205,15 +238,14 @@ function saveHistory(city) {
   if (!searchHistory.includes(city)) {
     searchHistory.unshift(city); // Add a new item (city) to the beginning of the array.
   }
-// Keep only the last 8 history searches
+  // Keep only the last 8 history searches
   searchHistory = searchHistory.slice(0, 8);
-  
-// Save updated array back to localStorage
+
+  // Save updated array back to localStorage
   localStorage.setItem("history", JSON.stringify(searchHistory));
 
   // Update the UI
   renderHistory();
-
 }
 
 // STEP 3 — Load search history on page load
@@ -224,30 +256,28 @@ function loadHistory() {
 }
 // STEP 4 — This function shows the saved search history on the page
 function renderHistory() {
-
   // Clear the existing search history list so we don't duplicate every time we update it
   historyList.innerHTML = "";
 
-// Go through each saved city stored in the searchHistory array
-  searchHistory.forEach(function(city) {
-
+  // Go through each saved city stored in the searchHistory array
+  searchHistory.forEach(function (city) {
     // Create a new <li> element for the list
     let li = document.createElement("li");
 
-// Create a button that shows the city name
+    // Create a button that shows the searched city name
     let btn = document.createElement("button");
 
-// Add Bootstrap classes for styling
+    // Add Bootstrap classes for styling
     btn.className = "btn btn-secondary w-100 mb-2";
 
-// Put the city name on the button
+    // Put the searched city name on the button
     btn.textContent = city;
 
-   // When the button is clicked, search that city again
-    btn.addEventListener("click", function() {
-      cityInput.value = city;      // Put city back into input box
-      getCurrentWeather(city);     // Fetch current weather
-      getForecast(city);           // Fetch forecast (when added)
+    // When the button is clicked, search that city again
+    btn.addEventListener("click", function () {
+      cityInput.value = city; // Put city back into input box
+      getCurrentWeather(city); // Fetch current weather
+      getForecast(city); // Fetch forecast (when added)
     });
 
     // Add the button into the <li>
@@ -257,7 +287,6 @@ function renderHistory() {
     historyList.appendChild(li);
   });
 }
-
 
 // Initialize app
 function init() {
