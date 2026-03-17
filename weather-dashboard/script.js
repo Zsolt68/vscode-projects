@@ -197,19 +197,67 @@ if (saved) {
 // This helps you confirm in the console that the history loaded correctly.
 console.log("Loaded history:", searchHistory);
 
-
+// STEP 2 — Save a new city into history
 function saveHistory(city) {
   console.log("Saving history:", city);
 
+  // Avoid duplicates search history. If the city is already in the array, we don't add it again.
+  if (!searchHistory.includes(city)) {
+    searchHistory.unshift(city); // Add a new item (city) to the beginning of the array.
+  }
+// Keep only the last 8 history searches
+  searchHistory = searchHistory.slice(0, 8);
   
+// Save updated array back to localStorage
+  localStorage.setItem("history", JSON.stringify(searchHistory));
+
+  // Update the UI
+  renderHistory();
 
 }
 
-// Load search history on page load
+// STEP 3 — Load search history on page load
 function loadHistory() {
   console.log("Loading history");
-  // TODO: Load from localStorage
+  // Render the history list in the UI
+  renderHistory();
 }
+// STEP 4 — This function shows the saved search history on the page
+function renderHistory() {
+
+  // Clear the existing search history list so we don't duplicate every time we update it
+  historyList.innerHTML = "";
+
+// Go through each saved city stored in the searchHistory array
+  searchHistory.forEach(function(city) {
+
+    // Create a new <li> element for the list
+    let li = document.createElement("li");
+
+// Create a button that shows the city name
+    let btn = document.createElement("button");
+
+// Add Bootstrap classes for styling
+    btn.className = "btn btn-secondary w-100 mb-2";
+
+// Put the city name on the button
+    btn.textContent = city;
+
+   // When the button is clicked, search that city again
+    btn.addEventListener("click", function() {
+      cityInput.value = city;      // Put city back into input box
+      getCurrentWeather(city);     // Fetch current weather
+      getForecast(city);           // Fetch forecast (when added)
+    });
+
+    // Add the button into the <li>
+    li.appendChild(btn);
+
+    // Add the <li> into the history list on the page
+    historyList.appendChild(li);
+  });
+}
+
 
 // Initialize app
 function init() {
