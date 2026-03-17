@@ -1,8 +1,35 @@
-
-
 body {
-  font-family: 'Inter', sans-serif;
-  background:white ;
+  font-family: "Inter", sans-serif;
+  background: white;
   min-height: 100vh;
   color: black;
 }
+
+.forecast-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 8px 6px;
+}
+
+/* Date text */
+.forecast-card h6 {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+/* Temperature and description */
+.forecast-card p {
+  font-size: 0.8rem;
+  margin: 2px 0;
+  line-height: 1.2;
+}
+
+/* Icon spacing */
+.forecast-card img {
+  width: 55px;
+  height: 55px;
+  margin: 4px auto;
+  object-fit: contain;
+} 

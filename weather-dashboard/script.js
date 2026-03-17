@@ -216,11 +216,11 @@ function displayForecast(data) {
 
     // Create a column for the card
     let col = document.createElement("div");
-    col.className = "col-md-2";
+    col.className = "col-6 col-sm-4 col-md-4 mb-3 d-flex";
 
     // Create the card
     let card = document.createElement("div");
-    card.className = "card p-2 mb-3 text-center";
+    card.className = "card p-2 text-center w-100 forecast-card";
 
     // Get the date
     let date = item.dt_txt.split(" ")[0];
