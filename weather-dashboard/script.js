@@ -113,7 +113,7 @@ function getForecast(city) {
   // "https://api.openweathermap.org/data/2.5/forecast"
   // We add the city name, API key, and units (metric)
   let url = forecastURL + "?q=" + city + "&appid=" + apiKey + "&units=metric";
-  
+
   // Call the OpenWeather API using fetch()
   fetch(url)
     .then(function (response) {
@@ -205,7 +205,50 @@ function displayCurrentWeather(data) {
 // Render forecast cards
 function displayForecast(data) {
   console.log("Displaying forecast:", data);
-  // TODO: Create forecast cards
+  // Clear old forecast cards
+  forecastCards.innerHTML = "";
+
+  // The API gives data every 3 hours (40 entries)
+  // We pick one entry per day → around the same time each day
+  for (let i = 0; i < data.list.length; i += 8) {
+    // Get one forecast entry
+    let item = data.list[i];
+
+    // Create a column for the card
+    let col = document.createElement("div");
+    col.className = "col-md-2";
+
+    // Create the card
+    let card = document.createElement("div");
+    card.className = "card p-2 mb-3 text-center";
+
+    // Get the date
+    let date = item.dt_txt.split(" ")[0];
+
+    // Get temperature
+    let temp = Math.round(item.main.temp);
+
+    // Get description
+    let desc = item.weather[0].description;
+
+    // Get icon
+    let icon = item.weather[0].icon;
+    let iconURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+
+    // Fill the card with info
+    card.innerHTML = `
+      <h6>${date}</h6>
+      <img src="${iconURL}" alt="Weather Icon">
+      <p>${temp}°C</p>
+      <p>${desc}</p>
+    `;
+
+    // Add card to column
+    col.appendChild(card);
+
+    // Add column to forecast section
+    forecastCards.appendChild(col);
+  }
 }
 
 // Save search history
