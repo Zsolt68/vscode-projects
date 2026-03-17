@@ -216,7 +216,7 @@ function displayForecast(data) {
 
     // Create a column for the card
     let col = document.createElement("div");
-    col.className = "col-6 col-sm-4 col-md-4 mb-3 d-flex";
+    col.className = "col-6 col-sm-4 col-md-3 mb-3 d-flex";
 
     // Create the card
     let card = document.createElement("div");
