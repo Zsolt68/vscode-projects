@@ -1,8 +1,8 @@
 body {
   font-family: "Inter", sans-serif;
-  background: white;
+  background-color: #f0f6ff; /* light sky blue */
   min-height: 100vh;
-  color: black;
+  color: #1a1a1a; /* softer black */
 }
 
 .forecast-card {
@@ -32,4 +32,4 @@ body {
   height: 55px;
   margin: 4px auto;
   object-fit: contain;
-} 
+}
