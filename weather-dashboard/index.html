@@ -22,38 +22,36 @@
 <body>
 
    <!-- Outer container that wraps the whole page -->
-  <div class="container" style="background-color:#ffdddd; padding:20px;">
+  <div class="container page-wrapper">
 
   <!-- Header section -->
   <header>
-    <header style="background-color:#ddeaff; padding:15px;">
+    <header class="header-box">
       <h1>Weather Dashboard</h1>
   </header>
 
    <!-- MAIN GRID (LEFT + RIGHT COLUMNS) -->
-    <main class="row" style="background-color:#ddffdd; padding:15px;">
+    <main class="row main-grid">
 
 
    <!-- Left column -->
 
-   <div class="col-12 col-md-4" style="background-color:yellowgreen; padding:15px;">
+   <div class="col-12 col-md-4 left-column">
    
    <!--SEARCH SECTION -->
-        <section id="search-section" style="background-color:#3bc0d2; padding:15px; margin-bottom:20px;">
+        <section id="search-section">
           <h2>Search for a City</h2>
 
   <!-- Search form -->
 
-  <form id="search-form" name="search-form" style="background-color:#d0f0f0; padding:10px;">
+  <form id="search-form" name="search-form">
             <input 
               id="city-input" 
-              style="background-color:#ffffff; width:100%; margin-bottom:10px;"
               placeholder="Enter city name"
             >
             <button 
               id="search-btn" 
               type="submit" 
-              style="background-color:#cce0ff; padding:5px 10px;"
             >
               Search
             </button>
@@ -62,33 +60,31 @@
           <!-- SEARCH MESSAGE (errors, info, etc.) -->
           <div 
             id="search-message" 
-            style="background-color:#f8d7da; padding:10px; margin-top:10px;"
           ></div>
         </section>
 
     <!-- SEARCH HISTORY SECTION -->
-        <section id="history-section" style="background-color:#5bd4e4; padding:15px;">
+        <section id="history-section">
           <h3>Recent Searches</h3>
 
  <!-- LIST WHERE JS WILL INSERT HISTORY BUTTONS -->
           <ul 
-            id="history-list" 
-            style="background-color:#fafafa; padding:10px; list-style:none;"
+            id="history-list"
           ></ul>
         </section>
        </div> <!-- END LEFT COLUMN -->
        
         <!-- RIGHT COLUMN -->
-      <div class="col-12 col-md-8" style="background-color:#f0e5ff; padding:15px;">
+      <div class="col-12 col-md-8">
         
         <!-- CURRENT WEATHER SECTION (hidden until a search happens) -->
-        <section id="current-weather" style="background-color:#e0f7fa; padding:15px; margin-bottom:20px; display:none;">
+        <section id="current-weather">
            <!-- Section title -->
           <h2>Current Weather</h2>
 
       <!-- CURRENT WEATHER CARD/Weather card container -->
-          <div id="current-weather-card" class="card" style="background-color:#dbab5e; padding:15px;">
-            <div class="card-body" style="background-color:#eaa177f5; padding:15px;">
+          <div id="current-weather-card" class="card";>
+            <div class="card-body">
 
               <!-- CITY NAME (JS updates: city-name) -->
               <h3 id="city-name"></h3>
@@ -97,7 +93,7 @@
               <p id="current-date"></p>
 
               <!-- MAIN WEATHER ROW (ICON + TEMP + DESCRIPTION) -->
-   <div class="d-flex align-items-center" style="background-color:#ffffff; padding:10px; margin-bottom:10px;">
+   <div class="d-flex align-items-center weather-main-row">
     <!-- WEATHER ICON (updated by JS: icon URL) -->
   <img 
     id="weather-icon" 
@@ -116,9 +112,8 @@
 </div>
 <!-- WEATHER DETAILS GRID (feels-like, humidity, wind, pressure) -->
 <div 
-  class="row" 
-  style="background-color:#f0f0f0; padding:10px;"
->
+  class="row weather-details">
+  
   <!-- FEELS LIKE (updated by JS: feels_like) -->
   <div class="col">
     Feels like: <span id="feels-like"></span>
@@ -144,14 +139,14 @@
         </section>
 
 <!-- FORECAST SECTION -->
-        <section id="forecast" style="background-color:#e8f4f5; padding:15px;">
+        <section id="forecast">
 
 
            <!-- FORECAST CARDS ROW -->
           <div 
             id="forecast-cards" 
             class="row" 
-            style="background-color:#dff0d8; padding:10px;"
+            style="background-color:#d8eef0; padding:10px;"
           >
           </div>
 

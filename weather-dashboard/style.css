@@ -1,3 +1,120 @@
+* Page wrapper */
+.page-wrapper {
+  background-color: #ffdddd;
+  padding: 20px;
+}
+
+/* Header */
+.header-box {
+  background-color: #ddeaff;
+  padding: 15px;
+}
+
+/* Main grid */
+.main-grid {
+  background-color: #ddffdd;
+  padding: 15px;
+}
+
+/* Left column */
+.left-column {
+  background-color: yellowgreen;
+  padding: 15px;
+}
+
+/* Search section */
+#search-section {
+  background-color: #3bc0d2;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Search form */
+#search-form {
+  background-color: #d0f0f0;
+  padding: 10px;
+}
+
+#city-input {
+  background-color: #ffffff;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#search-btn {
+  background-color: #cce0ff;
+  padding: 5px 10px;
+}
+
+/* Search message */
+#search-message {
+  background-color: #f8d7da;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* History section */
+#history-section {
+  background-color: #5bd4e4;
+  padding: 15px;
+}
+
+#history-list {
+  background-color: #fafafa;
+  padding: 10px;
+  list-style: none;
+}
+
+/* Right column */
+.right-column {
+  background-color: #f0e5ff;
+  padding: 15px;
+}
+
+/* Current weather section */
+#current-weather {
+  background-color: #cbf4f9;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+/* Current weather card */
+#current-weather-card {
+  background-color: #dbab5e;
+  padding: 15px;
+}
+
+#current-weather-card .card-body {
+  background-color: #d89969f0;
+  padding: 15px;
+}
+
+/* Weather main row */
+.weather-main-row {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Weather details grid */
+.weather-details {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+/* Forecast section */
+#forecast {
+  background-color: #e8f4f5;
+  padding: 15px;
+}
+
+/* Forecast cards container */
+#forecast-cards {
+  background-color: #d8eef0;
+  padding: 10px;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: #f0f6ff; /* light sky blue */
