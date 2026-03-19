@@ -36,7 +36,7 @@ This automated testing section contains all testing that has been run through a 
 [W3C](https://validator.w3.org/#validate_by_input) was used to validate the HTML and CSS for the site via direct text input. Result: Document checking completed. No errors or warnings to show.
 
 ### Jigsaw Validator
-[Jigsaw](https://jigsaw.w3.org/css-validator/  was used to validate the CSS for the site via direct text input. Result: Congratulations! No Error Found.
+[Jigsaw](https://jigsaw.w3.org/css-validator/validator$link)  was used to validate the CSS for the site via direct text input. Result: Congratulations! No Error Found.
 
 ### Lighthouse
 
