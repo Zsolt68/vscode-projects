@@ -2,7 +2,7 @@
 
 <img src="assets/docs/intothewoods-responsive.png" alt="An image representing how the site looks across different devices of varying size.">
 
-[View the live project here.](https://melody-lisa.github.io/into-the-woods/)
+[View the live project here.]
 
 A responsive, user-friendly weather application that allows users to search for any city and instantly view the current weather conditions along with a 5‑day forecast. Built with HTML, CSS, JavaScript, Bootstrap, and the OpenWeather API.
 
@@ -17,12 +17,6 @@ weather-dashboard/
 ├── index.html
 ├── style.css
 ├── script.js
-│
-├── assets/
-│   ├── icons/
-│   ├── images/
-│   └── fonts/
-│
 └── README.md
 
 
@@ -31,7 +25,6 @@ weather-dashboard/
 - **index.html** — Main application page using Bootstrap for layout.  
 - **style.css** — Custom styling layered on top of Bootstrap.  
 - **script.js** — API calls, DOM manipulation, forecast rendering, and error handling.  
-- **assets/** — Optional folder for icons, images, and fonts.  
 - **README.md** — Documentation for deployment, features, and testing.
 
 ---
