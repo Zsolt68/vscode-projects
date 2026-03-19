@@ -1,4 +1,4 @@
-* Page wrapper */
+/* Page wrapper */
 .page-wrapper {
   background-color: #ffdddd;
   padding: 20px;
@@ -103,7 +103,6 @@
   margin-right: 10px;
   object-fit: contain;
 }
-
 
 /* Weather details grid */
 .weather-details {
