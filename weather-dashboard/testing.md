@@ -41,16 +41,14 @@ The Lighthouse tool within the Chrome Developer Tools has been used to test perf
 
 | | Performance | Accessibility | Best Practice | SEO |
 | :---: | :---: | :---: | :---: | :---: |
-| Desktop | 98 | 100 | 100 | 100 |
-| Mobile | 94 | 100 | 100 | 100 |
+| Desktop | 100 | 99 | 100 | 89 |
+| Mobile | 100 | 99 | 100 | 89 |
 
 ### JSHint
 
 [JSHint](https://jshint.com/) was used to test the JavaScript file in this project.
 
-The JavaScript file tested through JSHint returned no errors or warnings when the 'ES6' option was selected.
-
-## Manual Testing
+The JavaScript file tested with JSHint returned no errors.
 
 ### Testing User Goals
 
