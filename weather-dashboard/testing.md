@@ -33,7 +33,10 @@ This automated testing section contains all testing that has been run through a 
 
 ### W3C Validator
 
-[W3C](https://validator.w3.org/#validate_by_input) was used to validate the HTML and CSS for the site via direct text input. Result > Document checking completed. No errors or warnings to show.
+[W3C](https://validator.w3.org/#validate_by_input) was used to validate the HTML and CSS for the site via direct text input. Result: Document checking completed. No errors or warnings to show.
+
+### Jigsaw Validator
+[Jigsaw](https://jigsaw.w3.org/css-validator/validator$link)  was used to validate the CSS for the site via direct text input. Result: Congratulations! No Error Found.
 
 ### Lighthouse
 
@@ -41,16 +44,14 @@ The Lighthouse tool within the Chrome Developer Tools has been used to test perf
 
 | | Performance | Accessibility | Best Practice | SEO |
 | :---: | :---: | :---: | :---: | :---: |
-| Desktop | 98 | 100 | 100 | 100 |
-| Mobile | 94 | 100 | 100 | 100 |
+| Desktop | 100 | 99 | 100 | 89 |
+| Mobile | 100 | 99 | 100 | 89 |
 
 ### JSHint
 
 [JSHint](https://jshint.com/) was used to test the JavaScript file in this project.
 
-The JavaScript file tested through JSHint returned no errors or warnings when the 'ES6' option was selected.
-
-## Manual Testing
+The JavaScript file tested with JSHint returned no errors.
 
 ### Testing User Goals
 
